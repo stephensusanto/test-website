@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Usaha Jaya Group - Supplier Kayu & Triplek Surabaya</title>
+
+    <style>
+        /* ------------------ ROOT STYLE ------------------ */
+        :root {
+            --primary: #0b1e39;
+            --accent: #ffb300;
+            --light: #ffffff;
+            --dark: #1a1a1a;
+            --radius: 16px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* ------------------ HERO PARALLAX ------------------ */
+        .hero {
+            position: relative;
+            height: 90vh;
+            background: url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1400&q=80') center/cover fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 700px;
+            padding: 20px;
+            animation: fadeUp 1.2s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 44px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 34px;
+            background: var(--accent);
+            color: #000;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: 0.25s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 26px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ------------------ SECTIONS ------------------ */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+
+        /* ------------------ CARDS INTERACTIVE ------------------ */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+            transition: 0.3s ease;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        /* ------------------ TIMELINE ------------------ */
+        .timeline {
+            position: relative;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .step {
+            background: white;
+            padding: 25px;
+            border-left: 6px solid var(--accent);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateX(-40px);
+        }
+
+        /* ------------------ PARALLAX FLOATING LAYERS ------------------ */
+        .parallax-layer {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            top: 10%;
+            left: 10%;
+            backdrop-filter: blur(6px);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* ------------------ ANIMATIONS ------------------ */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* reveal animation for scroll */
+        .reveal {
+            opacity: 1 !important;
+            transform: translate(0, 0) !important;
+        }
+
+        /* ------------------ FOOTER ------------------ */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO PARALLAX -->
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>PT Usaha Jaya Group</h1>
+            <p>Supplier Kayu & Triplek Surabaya — Material Premium, Harga Terjangkau, Siap Kirim Cepat</p>
+            <a href="#" class="btn-primary">Dapatkan Penawaran</a>
+        </div>
+    </div>
+
+    <!-- FLOATING PARALLAX DECOR -->
+    <div class="parallax-layer" id="layer1"></div>
+
+    <!-- VALUE SECTION -->
+    <section>
+        <h2 class="section-title">Mengapa Memilih Kami?</h2>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Kualitas Premium</h3>
+                <p>Material tersortir khusus untuk proyek besar & furniture.</p>
+            </div>
+            <div class="card">
+                <h3>Harga Terjangkau</h3>
+                <p>Cocok untuk kontraktor & industri volume besar.</p>
+            </div>
+            <div class="card">
+                <h3>Stok Ready</h3>
+                <p>Gudang selalu tersedia untuk suplai rutin.</p>
+            </div>
+            <div class="card">
+                <h3>Pengiriman Cepat</h3>
+                <p>Same-day Surabaya, 1×24 jam Jawa Timur.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT SECTION -->
+    <section>
+        <h2 class="section-title">Produk Unggulan</h2>
+
+        <div class="grid">
+            <div class="card"><strong>Triplek Kelapa</strong><br>Kuat & stabil untuk konstruksi.</div>
+            <div class="card"><strong>Triplek Meranti</strong><br>Finishing halus untuk furniture.</div>
+            <div class="card"><strong>Plywood Premium</strong><br>Grade proyek & grade furniture.</div>
+            <div class="card"><strong>Kayu Olahan</strong><br>Balok, kaso, papan siap pakai.</div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section>
+        <h2 class="section-title">Cara Kerja Kami</h2>
+
+        <div class="timeline">
+            <div class="step"><strong>1. Konsultasi</strong><br>Kami bantu memilih material terbaik.</div>
+            <div class="step"><strong>2. Cek Stok Real-Time</strong><br>Menghindari risiko kehabisan barang.</div>
+            <div class="step"><strong>3. Pengecekan Kualitas</strong><br>Material disortir & dicek ulang.</div>
+            <div class="step"><strong>4. Pengiriman Cepat</strong><br>Sampai ke lokasi proyek Anda.</div>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 PT Usaha Jaya Group — Supplier Kayu & Triplek Surabaya
+    </footer>
+
+    <script>
+        /* ------------------ REVEAL ON SCROLL ------------------ */
+        const revealElements = document.querySelectorAll(".card, .step");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add("reveal");
+            });
+        });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        /* ------------------ FLOATING PARALLAX JS ------------------ */
+        document.addEventListener("mousemove", e => {
+            const layer = document.getElementById("layer1");
+            let x = (window.innerWidth - e.pageX * 2) / 80;
+            let y = (window.innerHeight - e.pageY * 2) / 80;
+            layer.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    </script>
+
+</body>
+
+</html>
