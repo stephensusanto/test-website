@@ -2,278 +2,1146 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT Usaha Jaya Group - Supplier Kayu & Triplek Surabaya</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRIPLEK KAYU KELAPA MERANTI SURABAYA | Supplier Kayu & Triplek</title>
+    <meta name="description"
+        content="Supplier kayu dan triplek Surabaya. TRIPLEK KAYU KELAPA MERANTI dengan kualitas terbaik dan harga bersaing.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- [web:19] -->
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- [web:5][web:11] -->
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- [web:18] -->
 
     <style>
-        /* ------------------ ROOT STYLE ------------------ */
         :root {
-            --primary: #0b1e39;
-            --accent: #ffb300;
-            --light: #ffffff;
-            --dark: #1a1a1a;
-            --radius: 16px;
+            --primary: #8b4513;
+            /* coklat kayu */
+            --primary-dark: #5d2f0d;
+            --accent: #f0a500;
+            --bg-light: #fffaf3;
+            --text-dark: #222222;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: var(--light);
-            overflow-x: hidden;
+            font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            scroll-behavior: smooth;
         }
 
-        /* ------------------ HERO PARALLAX ------------------ */
-        .hero {
-            position: relative;
-            height: 90vh;
-            background: url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1400&q=80') center/cover fixed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
+        /* Navbar */
+        .navbar {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            background-color: #ffffff;
         }
 
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.55);
+        .navbar-brand span.logo-main {
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.06em;
         }
 
-        .hero-content {
-            position: relative;
-            max-width: 700px;
-            padding: 20px;
-            animation: fadeUp 1.2s ease-out;
+        .navbar-brand span.logo-sub {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #666666;
+            display: block;
         }
 
-        .hero h1 {
-            font-size: 44px;
-            margin-bottom: 10px;
+        .nav-link {
+            font-weight: 500;
+            color: #444444 !important;
         }
 
-        .hero p {
-            font-size: 18px;
-            opacity: 0.9;
+        .nav-link:hover,
+        .nav-link:focus {
+            color: var(--primary) !important;
         }
 
-        .btn-primary {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 14px 34px;
-            background: var(--accent);
-            color: #000;
-            border-radius: var(--radius);
+        .btn-cta {
+            background: var(--primary);
+            color: #ffffff;
+            border-radius: 999px;
+            padding-inline: 1.5rem;
             font-weight: 600;
-            text-decoration: none;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            transition: 0.25s;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 26px rgba(0, 0, 0, 0.25);
+        .btn-cta:hover {
+            background: var(--primary-dark);
+            color: #ffffff;
         }
 
-        /* ------------------ SECTIONS ------------------ */
+        /* Hero */
+        .hero {
+            padding: 6rem 0 4rem;
+            background: radial-gradient(circle at top left, #ffe4b5 0, #ffffff 45%, #fffaf3 100%);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            background-color: rgba(139, 69, 19, 0.06);
+            color: var(--primary-dark);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+        }
+
+        .hero-title {
+            font-size: clamp(2.1rem, 3.5vw + 1rem, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin: 1.1rem 0 0.6rem;
+            color: var(--primary-dark);
+        }
+
+        .hero-highlight {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 0.98rem;
+            color: #555555;
+            max-width: 32rem;
+        }
+
+        .hero-list {
+            margin-top: 1rem;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .hero-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .hero-list i {
+            color: var(--accent);
+        }
+
+        .hero-cta-wrap {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .btn-outline {
+            border-radius: 999px;
+            border: 1px solid #dddddd;
+            font-weight: 500;
+            padding-inline: 1.3rem;
+            color: #444444;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background-color: #ffffff;
+        }
+
+        .hero-meta {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            font-size: 0.85rem;
+            color: #666666;
+        }
+
+        .hero-meta strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+        }
+
+        .hero-card {
+            border-radius: 1.4rem;
+            background: linear-gradient(145deg, #5d2f0d, #8b4513);
+            color: #ffffff;
+            padding: 1.6rem 1.4rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+        }
+
+        .hero-card::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(240, 165, 0, 0.7), transparent 65%);
+            top: -40px;
+            right: -40px;
+            opacity: 0.6;
+        }
+
+        .hero-card-badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            opacity: 0.85;
+        }
+
+        .hero-card-title {
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .hero-card-list {
+            margin-top: 0.7rem;
+            padding-left: 1rem;
+            font-size: 0.86rem;
+        }
+
+        .hero-card-list li+li {
+            margin-top: 0.15rem;
+        }
+
+        .hero-card-price {
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .hero-card-price span {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffd27f;
+        }
+
+        /* Sections */
         section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: auto;
+            padding: 4rem 0;
         }
 
-        h2.section-title {
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
             text-align: center;
-            font-size: 32px;
-            margin-bottom: 40px;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 32rem;
+            margin: 0 auto 2rem;
+            font-size: 0.96rem;
+            color: #666666;
+        }
+
+        /* Product cards */
+        .product-card {
+            border-radius: 1.2rem;
+            border: 1px solid #eeeeee;
+            padding: 1.4rem 1.3rem;
+            background-color: #ffffff;
+            transition: all 0.18s ease-out;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            border-color: rgba(139, 69, 19, 0.3);
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .product-icon {
+            width: 2.6rem;
+            height: 2.6rem;
+            border-radius: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.7rem;
+            background-color: rgba(139, 69, 19, 0.08);
             color: var(--primary);
         }
 
-        /* ------------------ CARDS INTERACTIVE ------------------ */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+        .product-title {
+            font-weight: 600;
+            font-size: 1.02rem;
+            margin-bottom: 0.2rem;
         }
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: var(--radius);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
-            transition: 0.3s ease;
-            opacity: 0;
-            transform: translateY(40px);
+        .product-meta {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #999999;
+            margin-bottom: 0.4rem;
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+        .product-desc {
+            font-size: 0.9rem;
+            color: #555555;
+            margin-bottom: 0.6rem;
         }
 
-        /* ------------------ TIMELINE ------------------ */
-        .timeline {
-            position: relative;
-            max-width: 700px;
-            margin: auto;
+        .product-list {
+            font-size: 0.85rem;
+            color: #444444;
+            padding-left: 1.1rem;
+            margin-bottom: 0.6rem;
         }
 
-        .step {
-            background: white;
-            padding: 25px;
-            border-left: 6px solid var(--accent);
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-            opacity: 0;
-            transform: translateX(-40px);
+        .product-price {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-dark);
         }
 
-        /* ------------------ PARALLAX FLOATING LAYERS ------------------ */
-        .parallax-layer {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 50%;
-            top: 10%;
-            left: 10%;
-            backdrop-filter: blur(6px);
-            animation: float 6s ease-in-out infinite;
+        /* Benefits */
+        .benefit-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(240, 165, 0, 0.08);
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
         }
 
-        /* ------------------ ANIMATIONS ------------------ */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .benefit-title {
+            font-weight: 600;
+            font-size: 0.98rem;
         }
 
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
+        .benefit-text {
+            font-size: 0.9rem;
+            color: #555555;
         }
 
-        /* reveal animation for scroll */
-        .reveal {
-            opacity: 1 !important;
-            transform: translate(0, 0) !important;
+        /* Contact */
+        .contact-card {
+            border-radius: 1.4rem;
+            background-color: var(--bg-light);
+            padding: 2rem 1.5rem;
+            border: 1px solid #f0e6d9;
         }
 
-        /* ------------------ FOOTER ------------------ */
+        .contact-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: #777777;
+            margin-bottom: 0.35rem;
+        }
+
+        .contact-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .contact-icon {
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 0.9rem;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            margin-right: 0.75rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        textarea.form-control {
+            min-height: 140px;
+        }
+
+        .required {
+            color: #e55353;
+        }
+
+        /* Footer */
         footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
+            padding: 1.4rem 0 1.2rem;
+            border-top: 1px solid #eeeeee;
+            font-size: 0.85rem;
+            background-color: #ffffff;
+        }
+
+        .footer-links a {
+            color: #777777;
+            text-decoration: none;
+            margin-right: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 1.6rem;
+            right: 1.4rem;
+            width: 2.6rem;
+            height: 2.6rem;
+            border-radius: 999px;
+            border: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.2s ease-out;
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 991.98px) {
+            .hero {
+                padding-top: 5.2rem;
+            }
+
+            .hero-card {
+                margin-top: 2rem;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HERO PARALLAX -->
-    <div class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>PT Usaha Jaya Group</h1>
-            <p>Supplier Kayu & Triplek Surabaya — Material Premium, Harga Terjangkau, Siap Kirim Cepat</p>
-            <a href="https://wa.me/message/RK5YTN2FRM74E1" target="_blank" class="btn-primary">Chat WhatsApp</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex flex-column" href="#hero">
+                <span class="logo-main">TRIPLEK KAYU SURABAYA</span>
+                <span class="logo-sub">Kelapa • Meranti • Plywood</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+                <ul class="navbar-nav mb-2 mb-lg-0 me-lg-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#produk">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#keunggulan">Keunggulan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+                </ul>
+                <button class="btn btn-cta btn-sm me-2" data-bs-toggle="modal" data-bs-target="#cekHargaModal">
+                    <i class="fa-solid fa-tags me-1"></i> Cek Harga Cepat
+                </button>
+                <a href="#kontak" class="btn btn-outline btn-sm">
+                    <i class="fa-solid fa-phone me-1"></i> Minta Penawaran
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header id="hero" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="hero-badge">
+                        <i class="fa-solid fa-warehouse"></i>
+                        Supplier Kayu & Triplek Surabaya
+                    </span>
+                    <h1 class="hero-title">
+                        Triplek & Kayu
+                        <span class="hero-highlight">Kelapa • Meranti</span><br />
+                        Kualitas & Harga Terbaik
+                    </h1>
+                    <p class="hero-subtitle">
+                        Pusat penjualan kayu dan triplek untuk kebutuhan proyek, interior, furniture, dan bangunan
+                        dengan stok lengkap dan pengiriman cepat area Surabaya dan sekitarnya.
+                    </p>
+
+                    <ul class="hero-list">
+                        <li><i class="fa-solid fa-check-circle"></i> Ketebalan & ukuran lengkap untuk berbagai kebutuhan
+                            proyek.</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Harga grosir kompetitif untuk kontraktor, toko
+                            bangunan, dan workshop.</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Siap kirim dalam kota maupun luar kota (hubungi
+                            untuk detail).</li>
+                    </ul>
+
+                    <div class="hero-cta-wrap">
+                        <button class="btn btn-cta" data-bs-toggle="modal" data-bs-target="#cekHargaModal">
+                            <i class="fa-solid fa-calculator me-1"></i> Cek Harga Sekarang
+                        </button>
+                        <a href="#produk" class="btn btn-outline">
+                            Lihat Daftar Produk
+                        </a>
+                    </div>
+
+                    <div class="hero-meta">
+                        <div>
+                            <strong>10+ Tahun</strong>
+                            Pengalaman suplier kayu dan triplek.
+                        </div>
+                        <div>
+                            <strong>Stok Besar</strong>
+                            Siap melayani kebutuhan partai kecil hingga besar.
+                        </div>
+                        <div>
+                            <strong>Lokasi Strategis</strong>
+                            Gudang area Surabaya mudah diakses.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="hero-card mt-4 mt-lg-0">
+                        <div class="hero-card-badge">
+                            Kalkulator Kebutuhan (Estimasi)
+                        </div>
+                        <div class="hero-card-title">
+                            Hitung Perkiraan Lembar Triplek
+                        </div>
+                        <p class="mb-2" style="font-size: 0.86rem; opacity: 0.9;">
+                            Masukkan luas area (m²) untuk estimasi jumlah lembar triplek standar 122 x 244 cm.
+                        </p>
+
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <label class="form-label form-label-sm mb-1">Luas area (m²)</label>
+                                <input type="number" id="luasArea" class="form-control form-control-sm" min="1"
+                                    placeholder="Contoh: 30">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label form-label-sm mb-1">Cadangan (%)</label>
+                                <input type="number" id="cadanganPersen" class="form-control form-control-sm" min="0"
+                                    value="5">
+                            </div>
+                        </div>
+
+                        <button id="btnHitungTriplek" class="btn btn-light btn-sm mt-2">
+                            <i class="fa-solid fa-calculator me-1"></i> Hitung
+                        </button>
+
+                        <div id="hasilKalkulator" class="mt-2" style="font-size: 0.9rem; display:none;">
+                            <div>Perkiraan kebutuhan: <strong><span id="jumlahLembar">0</span> lembar</strong>.</div>
+                            <small class="d-block" style="opacity:0.85;">
+                                Hasil ini hanya estimasi. Konsultasikan kembali dengan tim kami untuk perhitungan pasti.
+                            </small>
+                        </div>
+
+                        <hr class="my-3 mt-3" />
+                        <div class="hero-card-price">
+                            Ingin harga pasti? <br />
+                            <span>Klik tombol di bawah</span> untuk kirim detail kebutuhan via WhatsApp.
+                        </div>
+                        <button class="btn btn-light btn-sm mt-2" data-bs-toggle="modal"
+                            data-bs-target="#cekHargaModal">
+                            Kirim Detail via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Produk -->
+    <section id="produk">
+        <div class="container">
+            <h2 class="section-title">Produk Kayu & Triplek</h2>
+            <p class="section-subtitle">
+                Pilihan material kayu dan triplek berkualitas untuk berbagai jenis proyek, dari interior rumah,
+                furniture, hingga kebutuhan konstruksi dan industri.
+            </p>
+
+            <div class="row g-3 g-md-4">
+                <!-- Triplek Kelapa -->
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="images/triplek-kelapa.jpg" class="img-fluid rounded mb-3" alt="Triplek Kayu Kelapa">
+                        <div class="product-icon">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div class="product-meta">Triplek Kelapa</div>
+                        <div class="product-title d-flex justify-content-between align-items-center">
+                            <span>Triplek Kayu Kelapa</span>
+                            <span class="badge bg-warning-subtle text-dark" style="font-size: 0.7rem;">Favorit</span>
+                        </div>
+                        <p class="product-desc">
+                            Cocok untuk lapisan, partisi, dan kebutuhan interior dengan harga ekonomis.
+                        </p>
+                        <ul class="product-list">
+                            <li>Ketebalan umum: 2mm – 18mm.</li>
+                            <li>Permukaan rata, mudah dikerjakan.</li>
+                            <li>Tersedia berbagai grade & kualitas.</li>
+                        </ul>
+                        <div class="product-price mb-2">
+                            Harga grosir & ecer tersedia. Hubungi untuk daftar harga lengkap.
+                        </div>
+                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                            data-bs-target="#cekHargaModal" data-produk="Triplek Kayu Kelapa">
+                            Cek harga produk ini
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Triplek Meranti -->
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="images/triplek-meranti.jpg" class="img-fluid rounded mb-3" alt="Triplek Kayu Meranti">
+                        <div class="product-icon">
+                            <i class="fa-solid fa-tree"></i>
+                        </div>
+                        <div class="product-meta">Triplek Meranti</div>
+                        <div class="product-title">Triplek Kayu Meranti</div>
+                        <p class="product-desc">
+                            Lebih kuat dan stabil, ideal untuk furniture, pintu, dan aplikasi yang membutuhkan
+                            ketahanan.
+                        </p>
+                        <ul class="product-list">
+                            <li>Ketebalan umum: 3mm – 18mm.</li>
+                            <li>Serat kayu lebih rapi dan kuat.</li>
+                            <li>Tersedia pilihan face veneer menarik.</li>
+                        </ul>
+                        <div class="product-price mb-2">
+                            Diskon khusus untuk pembelian partai proyek dan kontraktor.
+                        </div>
+                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                            data-bs-target="#cekHargaModal" data-produk="Triplek Kayu Meranti">
+                            Cek harga produk ini
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Kayu Olahan -->
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="images/kayu-olahan.jpg" class="img-fluid rounded mb-3"
+                            alt="Kayu Olahan Kaso Balok Papan">
+                        <div class="product-icon">
+                            <i class="fa-solid fa-cubes-stacked"></i>
+                        </div>
+                        <div class="product-meta">Kayu Olahan</div>
+                        <div class="product-title">Kaso, Balok, Papan</div>
+                        <p class="product-desc">
+                            Kayu kelapa dan meranti yang sudah diolah siap pakai untuk berbagai kebutuhan konstruksi.
+                        </p>
+                        <ul class="product-list">
+                            <li>Berbagai ukuran standard proyek.</li>
+                            <li>Kering, siap finishing & pemasangan.</li>
+                            <li>Bisa request ukuran tertentu (min. qty).</li>
+                        </ul>
+                        <div class="product-price mb-2">
+                            Konsultasikan kebutuhan ukuran dan spesifikasi kayu Anda.
+                        </div>
+                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                            data-bs-target="#cekHargaModal" data-produk="Kayu Olahan (Kaso/Balok/Papan)">
+                            Cek harga produk ini
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan -->
+    <section id="keunggulan" style="background-color: #fffaf3;">
+        <div class="container">
+            <h2 class="section-title">Kenapa Pilih Kami?</h2>
+            <p class="section-subtitle">
+                Mengutamakan kualitas material, ketersediaan stok, dan layanan yang responsif untuk membantu kelancaran
+                proyek Anda di Surabaya dan sekitarnya.
+            </p>
+
+            <div class="row g-3 g-md-4">
+                <div class="col-md-3 col-6">
+                    <div>
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-medal"></i>
+                        </div>
+                        <div class="benefit-title">Kualitas Terjamin</div>
+                        <p class="benefit-text">
+                            Seleksi bahan yang ketat, grade jelas, dan standar kualitas yang konsisten.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div>
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <div class="benefit-title">Harga Kompetitif</div>
+                        <p class="benefit-text">
+                            Skema harga bersahabat untuk pembelian rutin, toko bangunan, dan kontraktor.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div>
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <div class="benefit-title">Pengiriman Cepat</div>
+                        <p class="benefit-text">
+                            Armada siap kirim dan kerja sama dengan ekspedisi untuk pengiriman luar kota.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div>
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <div class="benefit-title">Layanan Responsif</div>
+                        <p class="benefit-text">
+                            Admin siap membantu cek stok, update harga, dan rekomendasi material.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (Accordion) -->
+    <section id="faq">
+        <div class="container">
+            <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+            <p class="section-subtitle">
+                Beberapa pertanyaan yang sering muncul dari pelanggan mengenai produk, pengiriman, dan pemesanan.
+            </p>
+
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq-heading-1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-collapse-1" aria-expanded="true" aria-controls="faq-collapse-1">
+                            Apakah bisa kirim ke luar Surabaya?
+                        </button>
+                    </h2>
+                    <div id="faq-collapse-1" class="accordion-collapse collapse show" aria-labelledby="faq-heading-1"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Bisa. Pengiriman luar kota akan dibantu melalui ekspedisi/armada yang bekerja sama, dengan
+                            ongkos kirim menyesuaikan jarak dan volume pesanan.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq-heading-2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-collapse-2" aria-expanded="false" aria-controls="faq-collapse-2">
+                            Apakah bisa request ketebalan atau ukuran tertentu?
+                        </button>
+                    </h2>
+                    <div id="faq-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-heading-2"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Untuk volume tertentu, Anda dapat request spesifikasi khusus (ketebalan/ukuran) selama masih
+                            memungkinkan di produksi. Silakan konsultasi melalui WhatsApp.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq-heading-3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq-collapse-3" aria-expanded="false" aria-controls="faq-collapse-3">
+                            Apakah ada minimal order?
+                        </button>
+                    </h2>
+                    <div id="faq-collapse-3" class="accordion-collapse collapse" aria-labelledby="faq-heading-3"
+                        data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Pembelian ecer tetap dilayani, namun untuk harga grosir dan diskon khusus biasanya berlaku
+                            minimal jumlah tertentu.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <p class="section-subtitle">
+                Kirim pesan atau langsung hubungi via WhatsApp untuk menanyakan stok, spesifikasi produk, dan penawaran
+                harga terbaik hari ini.
+            </p>
+
+            <div class="row g-3 g-md-4">
+                <div class="col-lg-5">
+                    <div class="contact-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="contact-label">Alamat Gudang</div>
+                                <div class="contact-value">
+                                    Surabaya, Jawa Timur (detail alamat bisa disesuaikan)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="contact-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="contact-label">WhatsApp</div>
+                                <div class="contact-value">
+                                    <a href="https://wa.me/6285172797979" class="text-decoration-none" target="_blank">
+                                        +62 812-3456-7890
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="contact-label">Telepon</div>
+                                <div class="contact-value">
+                                    031 - 000 0000 (contoh, sesuaikan)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <div class="contact-label">Jam Operasional</div>
+                                <div class="contact-value">
+                                    Senin – Sabtu, 08.00 – 17.00 WIB
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mt-3 mb-0" style="font-size: 0.86rem; color: #777777;">
+                            Catatan: Nomor kontak, alamat, dan jam operasional bisa Anda ganti sesuai data aktual
+                            perusahaan.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <form class="contact-form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nama <span class="required">*</span></label>
+                                <input type="text" class="form-control" placeholder="Nama lengkap Anda" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Nomor WhatsApp <span class="required">*</span></label>
+                                <input type="tel" class="form-control" placeholder="Contoh: 0812xxxxxxx" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" placeholder="Opsional, jika ada">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Jenis Kebutuhan</label>
+                                <select class="form-select">
+                                    <option value="">Pilih salah satu</option>
+                                    <option>Triplek Kelapa</option>
+                                    <option>Triplek Meranti</option>
+                                    <option>Kayu Olahan (Kaso/Balok/Papan)</option>
+                                    <option>Lainnya / Campuran</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Pesan / Detail Permintaan <span
+                                        class="required">*</span></label>
+                                <textarea class="form-control"
+                                    placeholder="Tulis kebutuhan produk, ukuran, dan jumlah yang diinginkan"
+                                    required></textarea>
+                            </div>
+                            <div class="col-12 d-flex flex-wrap align-items-center gap-2">
+                                <button type="button" id="btnSendMessage" class="btn btn-cta">
+                                    <i class="fa-brands fa-whatsapp me-1"></i> Kirim via WhatsApp
+                                </button>
+                                <span id="formStatus" style="font-size:0.85rem; color:#777777;"></span>
+                            </div>
+                            <div class="col-12">
+                                <small class="d-block text-muted" style="font-size: 0.8rem;">
+                                    Tombol di atas akan membuka WhatsApp dengan pesan otomatis sesuai form yang Anda
+                                    isi.
+                                </small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="mb-2 mb-md-0">
+                &copy; <span id="year"></span> TRIPLEK KAYU KELAPA MERANTI SURABAYA. Semua hak cipta dilindungi.
+            </div>
+            <div class="footer-links">
+                <a href="#hero">Beranda</a>
+                <a href="#produk">Produk</a>
+                <a href="#faq">FAQ</a>
+                <a href="#kontak">Kontak</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Modal Cek Harga -->
+    <div class="modal fade" id="cekHargaModal" tabindex="-1" aria-labelledby="cekHargaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cekHargaLabel">Cek Harga Cepat via WhatsApp</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size:0.9rem;">
+                        Pilih produk dan masukkan jumlah yang Anda butuhkan. Sistem akan menyiapkan draft pesan WhatsApp
+                        otomatis untuk Anda.
+                    </p>
+                    <div class="mb-3">
+                        <label class="form-label">Produk</label>
+                        <select id="modalProduk" class="form-select">
+                            <option>Triplek Kayu Kelapa</option>
+                            <option>Triplek Kayu Meranti</option>
+                            <option>Kayu Olahan (Kaso/Balok/Papan)</option>
+                            <option>Lainnya / Campuran</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Jumlah (lembar / batang)</label>
+                        <input type="number" id="modalJumlah" class="form-control" min="1" placeholder="Contoh: 50">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Catatan tambahan</label>
+                        <textarea id="modalCatatan" class="form-control" rows="3"
+                            placeholder="Contoh: kebutuhan proyek rumah 2 lantai, lokasi Surabaya Barat"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary btn-sm"
+                        data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" id="btnKirimModalWA" class="btn btn-cta btn-sm">
+                        <i class="fa-brands fa-whatsapp me-1"></i> Kirim ke WhatsApp
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- FLOATING PARALLAX DECOR -->
-
-
-    <!-- VALUE SECTION -->
-    <section>
-        <h2 class="section-title">Mengapa Memilih Kami?</h2>
-
-        <div class="grid">
-            <div class="card">
-                <h3>Kualitas Premium</h3>
-                <p>Material tersortir khusus untuk proyek besar & furniture.</p>
-            </div>
-            <div class="card">
-                <h3>Harga Terjangkau</h3>
-                <p>Cocok untuk kontraktor & industri volume besar.</p>
-            </div>
-            <div class="card">
-                <h3>Stok Ready</h3>
-                <p>Gudang selalu tersedia untuk suplai rutin.</p>
-            </div>
-            <div class="card">
-                <h3>Pengiriman Cepat</h3>
-                <p>Same-day Surabaya, 1×24 jam Jawa Timur.</p>
+    <!-- Toast (feedback) -->
+    <div class="position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 1080;">
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="status"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    Pesan WhatsApp sudah disiapkan. Silakan cek tab baru di browser Anda.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Tutup"></button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- PRODUCT SECTION -->
-    <section>
-        <h2 class="section-title">Produk Unggulan</h2>
-
-        <div class="grid">
-            <div class="card"><strong>Triplek Kelapa</strong><br>Kuat & stabil untuk konstruksi.</div>
-            <div class="card"><strong>Triplek Meranti</strong><br>Finishing halus untuk furniture.</div>
-            <div class="card"><strong>Plywood Premium</strong><br>Grade proyek & grade furniture.</div>
-            <div class="card"><strong>Kayu Olahan</strong><br>Balok, kaso, papan siap pakai.</div>
-        </div>
-    </section>
-
-    <!-- TIMELINE -->
-    <section>
-        <h2 class="section-title">Cara Kerja Kami</h2>
-
-        <div class="timeline">
-            <div class="step"><strong>1. Konsultasi</strong><br>Kami bantu memilih material terbaik.</div>
-            <div class="step"><strong>2. Cek Stok Real-Time</strong><br>Menghindari risiko kehabisan barang.</div>
-            <div class="step"><strong>3. Pengecekan Kualitas</strong><br>Material disortir & dicek ulang.</div>
-            <div class="step"><strong>4. Pengiriman Cepat</strong><br>Sampai ke lokasi proyek Anda.</div>
-        </div>
-    </section>
-
-    <footer>
-        © 2025 PT Usaha Jaya Group — Supplier Kayu & Triplek Surabaya
-    </footer>
+    <!-- Bootstrap JS (bundle includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        /* ------------------ REVEAL ON SCROLL ------------------ */
-        const revealElements = document.querySelectorAll(".card, .step");
+        // Set current year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add("reveal");
+        // Back to top button behavior
+        const backToTop = document.getElementById("backToTop");
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 260) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
+            }
+        });
+
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // Kalkulator triplek
+        const btnHitungTriplek = document.getElementById("btnHitungTriplek");
+        const luasAreaInput = document.getElementById("luasArea");
+        const cadanganInput = document.getElementById("cadanganPersen");
+        const hasilKalkulator = document.getElementById("hasilKalkulator");
+        const jumlahLembarSpan = document.getElementById("jumlahLembar");
+
+        if (btnHitungTriplek) {
+            btnHitungTriplek.addEventListener("click", function () {
+                const luas = parseFloat(luasAreaInput.value);
+                const cadangan = parseFloat(cadanganInput.value || 0);
+                const luasLembar = 1.22 * 2.44; // m² per lembar triplek standar
+                if (!luas || luas <= 0) {
+                    alert("Mohon isi luas area dengan benar.");
+                    return;
+                }
+                let jumlah = luas / luasLembar;
+                if (!isNaN(cadangan) && cadangan > 0) {
+                    jumlah = jumlah * (1 + cadangan / 100);
+                }
+                const pembulatan = Math.ceil(jumlah);
+                jumlahLembarSpan.textContent = pembulatan;
+                hasilKalkulator.style.display = "block";
             });
-        });
+        }
 
-        revealElements.forEach(el => observer.observe(el));
+        // Toast instance
+        const toastEl = document.getElementById("successToast");
+        const successToast = toastEl ? new bootstrap.Toast(toastEl) : null;
 
-        /* ------------------ FLOATING PARALLAX JS ------------------ */
-        document.addEventListener("mousemove", e => {
-            const layer = document.getElementById("layer1");
-            let x = (window.innerWidth - e.pageX * 2) / 80;
-            let y = (window.innerHeight - e.pageY * 2) / 80;
-            layer.style.transform = `translate(${x}px, ${y}px)`;
-        });
+        function openWAWithText(text) {
+            const targetNumber = "6281234567890"; // ganti dengan nomor WA perusahaan (format internasional tanpa +)
+            const waUrl = "https://wa.me/" + targetNumber + "?text=" + text;
+            window.open(waUrl, "_blank");
+            if (successToast) {
+                successToast.show();
+            }
+        }
+
+        // WhatsApp form integration (section kontak)
+        const btnSendMessage = document.getElementById("btnSendMessage");
+        const formStatus = document.getElementById("formStatus");
+
+        if (btnSendMessage) {
+            btnSendMessage.addEventListener("click", function () {
+                const form = document.querySelector(".contact-form");
+                const name = form.querySelector('input[type="text"]').value.trim();
+                const phone = form.querySelector('input[type="tel"]').value.trim();
+                const email = form.querySelector('input[type="email"]').value.trim();
+                const kebutuhan = form.querySelector("select").value;
+                const message = form.querySelector("textarea").value.trim();
+
+                if (!name || !phone || !message) {
+                    alert("Mohon lengkapi Nama, Nomor WhatsApp, dan Pesan sebelum mengirim.");
+                    return;
+                }
+
+                let text = "Halo, saya ingin menanyakan produk TRIPLEK KAYU KELAPA MERANTI.%0A%0A";
+                text += "*Nama:* " + encodeURIComponent(name) + "%0A";
+                text += "*No. WA:* " + encodeURIComponent(phone) + "%0A";
+                if (email) {
+                    text += "*Email:* " + encodeURIComponent(email) + "%0A";
+                }
+                if (kebutuhan) {
+                    text += "*Jenis kebutuhan:* " + encodeURIComponent(kebutuhan) + "%0A";
+                }
+                text += "%0A*Detail permintaan:*%0A" + encodeURIComponent(message);
+
+                openWAWithText(text);
+                formStatus.textContent = "Pesan sudah disiapkan di WhatsApp.";
+                setTimeout(() => {
+                    formStatus.textContent = "";
+                }, 4000);
+            });
+        }
+
+        // Modal Cek Harga – prefill produk dari tombol produk
+        const cekHargaModal = document.getElementById("cekHargaModal");
+        const modalProdukSelect = document.getElementById("modalProduk");
+
+        if (cekHargaModal) {
+            cekHargaModal.addEventListener("show.bs.modal", function (event) {
+                const button = event.relatedTarget;
+                if (!button) return;
+                const produk = button.getAttribute("data-produk");
+                if (produk && modalProdukSelect) {
+                    for (const option of modalProdukSelect.options) {
+                        if (option.text === produk) {
+                            option.selected = true;
+                            break;
+                        }
+                    }
+                }
+            });
+        }
+
+        // Modal Cek Harga – kirim WA
+        const btnKirimModalWA = document.getElementById("btnKirimModalWA");
+        const modalJumlah = document.getElementById("modalJumlah");
+        const modalCatatan = document.getElementById("modalCatatan");
+
+        if (btnKirimModalWA) {
+            btnKirimModalWA.addEventListener("click", function () {
+                const produk = modalProdukSelect.value;
+                const jumlah = modalJumlah.value.trim();
+                const catatan = modalCatatan.value.trim();
+
+                let text = "Halo, saya ingin cek harga produk:%0A%0A";
+                text += "*Produk:* " + encodeURIComponent(produk) + "%0A";
+                if (jumlah) {
+                    text += "*Perkiraan jumlah:* " + encodeURIComponent(jumlah) + "%0A";
+                }
+                if (catatan) {
+                    text += "%0A*Catatan:*%0A" + encodeURIComponent(catatan);
+                }
+
+                openWAWithText(text);
+            });
+        }
     </script>
-
 </body>
+
 
 </html>
